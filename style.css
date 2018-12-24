@@ -35,6 +35,15 @@ body {
     cursor: pointer;
 }
 
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    text-decoration: none;
+    color: white;
+}
+
 .row {
     text-align: middle;
     /* border-color: white;
