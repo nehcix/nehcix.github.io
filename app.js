@@ -13,6 +13,8 @@ new Vue({
         monsterDamage: 0,
         logPlayer: '',
         logMonster: '',
+        backGroundColorPlayer: 'green',
+        backGroundColorMonster: 'green',
         logColor: 'green',
         showLog: false,
 
@@ -32,6 +34,8 @@ new Vue({
             this.monsterHealth = 100;
             this.showSpecialAttack = false;
             this.specialAttackUsed = false;
+            this.backGroundColorPlayer = 'green';
+            this.backGroundColorMonster = 'green';
             this.gameStatue = 'Monster Slayer';
         },
         Verification: function() {
@@ -49,11 +53,31 @@ new Vue({
             if (this.playerHealth === 0 || this.monsterHealth === 0) {
                 this.gameStarted = false;
             }
+            if(this.playerHealth < 75){
+                this.backGroundColorPlayer = 'rgb(255,200,0)';
+            }
+            if(this.playerHealth < 50){
+                this.backGroundColorPlayer = 'rgb(255,100,0)';
+            }
+            if(this.playerHealth < 20){
+                this.backGroundColorPlayer = 'rgb(255,0,0)';
+            }
+            if(this.monsterHealth < 75){
+                this.backGroundColorMonster = 'rgb(255,200,0)';
+            }
+            if(this.monsterHealth < 50){
+                this.backGroundColorMonster = 'rgb(255,100,0)';
+            }
+            if(this.monsterHealth < 20){
+                this.backGroundColorMonster = 'rgb(255,0,0)';
+            }
         },
         GiveUp: function() {
             this.gameStarted = false;
             this.playerHealth = 100;
             this.monsterHealth = 100;
+            this.backGroundColorPlayer = 'green';
+            this.backGroundColorMonster = 'green';
             this.logPlayer = "";
             this.logMonster = "";
         },

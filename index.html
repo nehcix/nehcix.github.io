@@ -22,9 +22,8 @@
                     </transition>
                 </h1>
                 <div class="healthbar">
-                    <div class="healthbar text-center" style="background-color: green; margin: 0; color: white; height: 40px;" v-bind:style="{width: playerHealth + '%'}">
+                    <div class="healthbar text-center" style="margin: 0; color: white; height: 40px;" :style="[{width: playerHealth + '%'},{backgroundColor: backGroundColorPlayer}]">
                         {{ playerHealth }}
-
                     </div>
                 </div>
             </div>
@@ -38,7 +37,7 @@
                     </transition>
                 </h1>
                 <div class="healthbar">
-                    <div class="healthbar text-center" style="background-color: green; margin: 0; color: white; height: 40px;" v-bind:style="{width: monsterHealth + '%'}">
+                    <div class="healthbar text-center" style="background-color: green; margin: 0; color: white; height: 40px;" v-bind:style="[{width: monsterHealth + '%'},{backgroundColor: backGroundColorMonster}]">
                         {{ monsterHealth }}
                     </div>
                 </div>
