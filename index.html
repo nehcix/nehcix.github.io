@@ -2,36 +2,64 @@
 <html>
 
 <head>
-    <title>Startup</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
-    <!-- Bootstrap CSS from a CDN. This way you don't have to include the bootstrap file yourself -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
-    <!-- Your own stylesheet -->
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Monster Slayer</title>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/app.css">
 </head>
 
 <body>
+    <div id="app">
+        <h1 class="text-center" style="font-size:70px">{{ gameStatue }}</h1>
+        <section class="row">
+            <div class="small-6 columns">
+                <h1 class="">
+                    YOU 
+                    <transition name="slide-fade">
+                        <span :style="{color: logColor}" v-show="showLog">
+                            {{ logPlayer }}
+                        </span>
+                    </transition>
+                </h1>
+                <div class="healthbar">
+                    <div class="healthbar text-center" style="background-color: green; margin: 0; color: white; height: 40px;" v-bind:style="{width: playerHealth + '%'}">
+                        {{ playerHealth }}
 
-    <div class="container-fluid">
-
-        <div class="row row1">
-            <div class="col">
-                <h2>THE BIGGEEST STARTUP EVENT OF THE YEAR1</h2>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <button type="button" class="btn btn-primary"> <a href="ColorPicker/colorpicker.html"> Go To Color Picker!</a></button>
+            <div class="small-6 columns">
+                <h1 class="">
+                    MONSTER 
+                    <transition name="slide-fade">
+                        <span :style="{color: logColor}" v-show="showLog">
+                            {{ logMonster }}
+                        </span>
+                    </transition>
+                </h1>
+                <div class="healthbar">
+                    <div class="healthbar text-center" style="background-color: green; margin: 0; color: white; height: 40px;" v-bind:style="{width: monsterHealth + '%'}">
+                        {{ monsterHealth }}
+                    </div>
+                </div>
             </div>
-        </div>
-
+        </section>
+        <section v-if="!gameStarted" class="row controls">
+            <div class="small-12 columns">
+                <button id="start-game" @click="StartNewGame">StartNewGame</button>
+            </div>
+        </section>
+        <section v-if="gameStarted" class="row controls">
+            <div class="small-12 columns">
+                <button v-if="showSpecialAttack && !specialAttackUsed" id="special-attack" @click="SpecialAttack">SPECIAL ATTACK</button>
+                <button id="attack" @click="NormalAttack">ATTACK</button>
+                <button id="heal" @click="Heal">HEAL</button>
+                <button id="give-up" @click="GiveUp">GIVE UP</button>
+            </div>
+        </section>
     </div>
-
 </body>
+
+<script src="app.js"></script>
 
 </html>
