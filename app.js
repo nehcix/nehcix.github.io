@@ -1,7 +1,7 @@
 new Vue({
     el: '#app',
     data: {
-        gameStatue: 'Monster Slayer 1.1',
+        gameStatue: 'Monster Slayer',
         gameStarted: false,
         playerHealth: 100,
         playerDamage: 0,
@@ -18,10 +18,10 @@ new Vue({
         logColor: 'green',
         showLog: false,
 
-        playerMaxNormalDamage: 12,
+        playerMaxNormalDamage: 15,
         playerMinNormalDamage: 5,
-        playerMaxNormalHeal: 7,
-        playerMinNormalHeal: -1,
+        playerMaxNormalHeal: 10,
+        playerMinNormalHeal: 0,
         playerMaxSpecialDamage: 30,
         playerMinSpecialDamage: 20,
         monsterMaxDamage: 25,
