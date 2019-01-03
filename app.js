@@ -18,8 +18,8 @@ new Vue({
         logColor: 'green',
         showLog: false,
 
-        playerMaxNormalDamage: 20,
-        playerMinNormalDamage: 10,
+        playerMaxNormalDamage: 17,
+        playerMinNormalDamage: 7,
         playerMaxNormalHeal: 10,
         playerMinNormalHeal: -1,
         playerMaxSpecialDamage: 40,
