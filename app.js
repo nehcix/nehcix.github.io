@@ -1,7 +1,7 @@
 new Vue({
     el: '#app',
     data: {
-        gameStatue: 'Monster Slayer',
+        gameStatue: 'Monster Slayer 1.1',
         gameStarted: false,
         playerHealth: 100,
         playerDamage: 0,
