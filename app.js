@@ -20,7 +20,7 @@ new Vue({
 
         playerMaxNormalDamage: 20,
         playerMinNormalDamage: 10,
-        playerMaxNormalHeal: 5,
+        playerMaxNormalHeal: 10,
         playerMinNormalHeal: -1,
         playerMaxSpecialDamage: 40,
         playerMinSpecialDamage: 20,
